@@ -1,2 +1,7 @@
-# au_dl_course
-preparing homeworks for course on deep learning in SpbAU
+# deeplearning-hw
+
+Deep learning course homework at SPbAU term 7
+
+## Installation
+
+`pip install -r requirements.txt`
