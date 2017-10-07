@@ -6,9 +6,9 @@ Deep learning course homework at SPbAU term 7
 
 ### Prerequisites
 
-* make
-* python>=3.6.2
-* pip
+* **python>=3.6.2** with **pip**
+* **make** to work with [Makefile](Makefile)
+* **bash** to run *.sh scripts
 
 ### Dependensies
 
