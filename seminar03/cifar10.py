@@ -1,8 +1,8 @@
-
-import numpy as np
-import pickle
 import os
+import pickle
+
 import download
+import numpy as np
 from dataset import one_hot_encoded
 
 ########################################################################
@@ -42,6 +42,7 @@ _images_per_file = 10000
 # Total number of images in the training-set.
 # This is used to pre-allocate arrays for efficiency.
 _num_images_train = _num_files_train * _images_per_file
+
 
 ########################################################################
 # Private functions for downloading, unpacking and loading data-files.
