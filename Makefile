@@ -1,12 +1,41 @@
 all: help
 
-help:	## Show this help
-	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
+# ANSI colors.
+GREEN  := $(shell tput -Txterm setaf 2)
+WHITE  := $(shell tput -Txterm setaf 7)
+YELLOW := $(shell tput -Txterm setaf 3)
+RESET  := $(shell tput -Txterm sgr0)
 
-freeze:	## Freeze packages in currect env and place them into requirements.txt
-	pip freeze >requirements.txt
+# Add the following "help" target to your Makefile and add help text after
+# each target name starting with "##".
+# A category can be added with "@category".
+HELP_FUN := \
+    %help; \
+    while(<>) { push @{$$help{$$2 // 'options'}}, [$$1, $$3] if \
+    /^([a-zA-Z\-]+)\s*:.*\#\#(?:@([a-zA-Z\-]+))?\s(.*)$$/ }; \
+    print "usage: make [target]+\n\n"; \
+    for (sort keys %help) { \
+    print "${WHITE}$$_:${RESET}\n"; \
+    for (@{$$help{$$_}}) { \
+    $$sep = " " x (32 - length $$_->[0]); \
+    print "  ${YELLOW}$$_->[0]${RESET}$$sep${GREEN}$$_->[1]${RESET}\n"; \
+    }; \
+    print "\n"; }
 
-clean:	## Do the cleaning, removing unnecessary files
+# Consts.
+REQS_FILE := requirements.txt
+
+
+help:	##@miscellaneous	Show this help.
+	@perl -e '$(HELP_FUN)' $(MAKEFILE_LIST)
+
+freeze:	##@basic	Place venv packages into "$REQS_FILE".
+	pip freeze >${REQS_FILE}
+
+reqs:	##@basic	Install necessary packages.
+	pip install -r ${REQS_FILE}
+
+clean:	##@basic	Do the cleaning, removing unnecessary files.
 	rm -rf *~ \#*
 
-.PHONY: all freeze clean
+.PHONY: all help freeze reqs clean
