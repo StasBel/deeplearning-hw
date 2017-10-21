@@ -3,6 +3,7 @@ bleach==2.0.0
 cycler==0.10.0
 decorator==4.1.2
 entrypoints==0.2.3
+enum34==1.1.6
 html5lib==0.999999999
 ipykernel==4.6.1
 ipython==6.1.0
@@ -26,6 +27,7 @@ numpy==1.13.1
 pandocfilters==1.4.2
 pexpect==4.2.1
 pickleshare==0.7.4
+prettytensor==0.7.4
 prompt-toolkit==1.0.15
 protobuf==3.4.0
 ptyprocess==0.5.2

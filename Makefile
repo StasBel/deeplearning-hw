@@ -1,5 +1,3 @@
-all: help
-
 # ANSI colors.
 GREEN  := $(shell tput -Txterm setaf 2)
 WHITE  := $(shell tput -Txterm setaf 7)
@@ -25,17 +23,19 @@ HELP_FUN := \
 # Consts.
 REQS_FILE := requirements.txt
 
+# Targets.
+all: help
 
 help:	##@miscellaneous	Show this help.
 	@perl -e '$(HELP_FUN)' $(MAKEFILE_LIST)
 
-freeze:	##@basic	Place venv packages into "$REQS_FILE".
+freeze:	##@basic	Place venv packages into reqs file.
 	pip freeze >${REQS_FILE}
 
-reqs:	##@basic	Install necessary packages.
+deps:	##@basic	Install necessary packages.
 	pip install -r ${REQS_FILE}
 
 clean:	##@basic	Do the cleaning, removing unnecessary files.
 	rm -rf *~ \#*
 
-.PHONY: all help freeze reqs clean
+.PHONY: all help freeze deps clean

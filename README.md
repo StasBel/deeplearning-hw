@@ -1,6 +1,6 @@
 # deeplearning-hw
 
-Deep learning course homework at SPbAU term 7.
+Deep learning course homework at SPbAU term 7
 
 ## Installation
 
@@ -13,3 +13,7 @@ Deep learning course homework at SPbAU term 7.
 ### Dependensies
 
 `make deps`
+
+## Usage
+
+Run `make help` for help.
