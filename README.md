@@ -16,4 +16,4 @@ Deep learning course homework at SPbAU term 7
 
 ## Usage
 
-Run `make help` for help.
+`make help`
