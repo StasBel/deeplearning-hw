@@ -37,7 +37,7 @@ def __sample(a, temperature=1.0):
         e_x = np.exp(x - np.max(x))
         return e_x / e_x.sum()
 
-    a = np.log(a) / temperature
+    a = np.ma.log(a).filled(0) / temperature
     a = softmax(a)
     # a = np.exp(a) / np.sum(np.exp(a))
     try:
@@ -52,7 +52,7 @@ def __sample(a, temperature=1.0):
 
 
 def __predict(model, x, indices_val, diversity):
-    preds = model.predict(x, verbose=0)[0]
+    preds = model.predict(x)[0]
     next_index = __sample(preds, diversity)
     next_val = indices_val[next_index]
 

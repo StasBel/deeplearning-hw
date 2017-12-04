@@ -8,6 +8,15 @@ name = "pypi"
 [packages]
 
 jupyter = "*"
+numpy = "*"
+"music21" = "*"
+keras = "*"
+matplotlib = "*"
+theano = {git = "https://github.com/Theano/Theano.git"}
+tensorflow = "*"
+pygame = "*"
+tqdm = "*"
+lazy = "*"
 
 
 [dev-packages]

@@ -21,6 +21,7 @@ Run `make help` for get info on that.
 ### Prerequisites
 
 * **bash** for *.sh scripts
+* **timidity** for [seminar10](seminar10) to play midi files
 
 ## Usage
 

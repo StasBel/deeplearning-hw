@@ -72,3 +72,6 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+#DeepJazz
+midi/deepjazz_on_metheny...128
