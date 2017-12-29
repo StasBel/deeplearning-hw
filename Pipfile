@@ -13,10 +13,13 @@ numpy = "*"
 keras = "*"
 matplotlib = "*"
 theano = {git = "https://github.com/Theano/Theano.git"}
-tensorflow = "*"
 pygame = "*"
 tqdm = "*"
 lazy = "*"
+gym = "*"
+tflearn = "*"
+"h5py" = "*"
+tensorflow = "*"
 
 
 [dev-packages]
